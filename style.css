@@ -41,6 +41,22 @@
      }
 }
 
+@keyframes show-circle {
+     0% {
+          right: -100px;
+     }
+
+     100% {
+          right: calc(50vw - 350px);
+     }
+}
+
+@keyframes orbit {
+     100% {
+          transform: rotate(360deg);
+     }
+}
+
 a {
      text-decoration: none;
 }
@@ -73,6 +89,15 @@ a {
      background-color: gold;
 }
 
+#spinning-circle-container {
+     animation: orbit 1s linear;
+     animation-play-state: paused;
+     top: calc(50vh - 70px);
+     left: calc(50vw - 350px);
+     height: 100px;
+     width: 400px;
+}
+
 #spinning-circle {
      position: fixed;
      width: 100px;
@@ -81,6 +106,8 @@ a {
      border-radius: 50px;
      right: calc(50vw - 350px);
      top: calc(50vh - 70px);
+     animation: show-circle 1s ease;
+     animation-play-state: paused;
 }
 
 #progress {

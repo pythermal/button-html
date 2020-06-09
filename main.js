@@ -7,7 +7,8 @@ var showBar = false;
 var buttonOn = false;
 
 var unlocked = {
-     circle: false
+     circle: false,
+     movingCircle: false
 };
 
 $("#progress-max").html(maxClicks);
@@ -58,9 +59,21 @@ setInterval(() => {
 
           $("#progress").css("animation", "bar-anim 1s ease");
 
+          $("#spinning-circle").css("animation-play-state", "running");
+          $("#spinning-circle-container").css("animation-play-state", "running");
+
+          document.getElementById("unlock-sfx").currentTime = 0;
+          document.getElementById("unlock-sfx").play();
+
           unlocked.circle = true;
      } else {
           $("#progress-number").html(clicks);
           $("#progress-fill").width((clicks / maxClicks) * $("#progress").width());
+     }
+
+     if (buttonOn) {
+          $("#spinning-circle").css("background-color", "#EDC500");
+     } else {
+          $("#spinning-circle").css("background-color", "#555");
      }
 }, 20);
