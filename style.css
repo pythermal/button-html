@@ -90,24 +90,26 @@ a {
 }
 
 #spinning-circle-container {
+     position: absolute;
      animation: orbit 1s linear;
      animation-play-state: paused;
      top: calc(50vh - 70px);
      left: calc(50vw - 350px);
      height: 100px;
-     width: 400px;
+     width: 600px;
+     background-color: gray;
+     z-index: 1;
 }
 
 #spinning-circle {
-     position: fixed;
+     position: absolute;
      width: 100px;
      height: 100px;
      background-color: #555;
      border-radius: 50px;
-     right: calc(50vw - 350px);
-     top: calc(50vh - 70px);
      animation: show-circle 1s ease;
      animation-play-state: paused;
+     z-index: 2;
 }
 
 #progress {
